@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Proposal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ADD8E6; /* Light blue background */
+            color: #333333; /* Dark gray text for better readability */
+            text-align: center;
+            padding: 50px;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .present-box {
+            display: inline-block;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #FF5733;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .present-box::before,
+        .present-box::after {
+            content: '';
+            position: absolute;
+            background-color: #C70039;
+        }
+
+        .present-box::before {
+            width: 20px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .present-box::after {
+            width: 100%;
+            height: 20px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .click-text {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .confession {
+            display: none;
+        }
+
+        .confession.active {
+            display: block;
+        }
+
+        .content {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        .button-group {
+            margin-top: 20px;
+        }
+
+        .button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .yes-button {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .no-button {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="slide1" class="content">
+        <h1>🎄 Happy Christmas Eve, Ermina! 🎄</h1>
+        <p>
+            This Christmas Eve, I wanted to give you something truly special...<br>
+            Imagine a place filled with history, warmth, and beauty—Greece! A place that inspires love and adventure, just like how I feel every moment with you.
+        </p>
+        <div class="present-box" onclick="openPresent()"></div>
+        <p class="click-text">Click to Open 🎁</p>
+    </div>
+
+    <div id="slide2" class="confession content">
+        <h1>🎁 Merry Christmas, Ermina! 🎁</h1>
+        <p>
+            Inside this box, I wanted to place something meaningful:<br>
+            My feelings for you! ❤️<br>
+            Ermina, you make every moment brighter and every day more special.
+        </p>
+        <h2>Would you like to be my girlfriend? ❤️</h2>
+        <div class="button-group">
+            <button class="button yes-button" onclick="handleYes()">Yes</button>
+            <button class="button no-button" onclick="handleNo()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function openPresent() {
+            // Hide the first slide and show the second slide
+            document.getElementById('slide1').style.display = 'none';
+            document.getElementById('slide2').classList.add('active');
+        }
+
+        function handleYes() {
+            alert('Yay! I\'m so happy you said yes! ❤️');
+        }
+
+        function handleNo() {
+            alert('That\'s okay. I hope you still enjoy the gesture. 😊');
+        }
+    </script>
+</body>
+</html>
